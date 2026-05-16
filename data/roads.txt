@@ -1,0 +1,8 @@
+Kolkata Howrah 10
+Kolkata SaltLake 8
+SaltLake Airport 12
+Howrah Airport 20
+Howrah Durgapur 40
+Durgapur Asansol 25
+Airport NewTown 6
+NewTown SaltLake 4
