@@ -61,13 +61,17 @@ data/      -> Roads, history, reports
 ### Compile
 
 ```bash
-g++ src/*.cpp -o simulator
+g++ main.cpp src/*.cpp -o gps
 ```
 
 ### Run
 
 ```bash
-./simulator
+./gps
 ```
 
 ---
+
+## Author
+
+Debopriya Das
