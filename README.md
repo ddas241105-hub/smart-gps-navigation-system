@@ -52,3 +52,22 @@ Uses heuristic optimization for faster route estimation.
 include/   -> Header files
 src/       -> Source files
 data/      -> Roads, history, reports
+
+```
+---
+
+## How to Run
+
+### Compile
+
+```bash
+g++ src/*.cpp -o simulator
+```
+
+### Run
+
+```bash
+./simulator
+```
+
+---
