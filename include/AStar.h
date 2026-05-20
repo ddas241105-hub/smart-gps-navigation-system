@@ -1,9 +1,9 @@
-#ifndef DIJKSTRA_H
-#define DIJKSTRA_H
+#ifndef ASTAR_H
+#define ASTAR_H
 
 #include "Graph.h"
 
-class Dijkstra {
+class AStar {
 
 public:
 
@@ -11,6 +11,12 @@ public:
         Graph& graph,
         string start,
         string destination
+    );
+
+    double heuristic(
+        Graph& graph,
+        string city1,
+        string city2
     );
 };
 

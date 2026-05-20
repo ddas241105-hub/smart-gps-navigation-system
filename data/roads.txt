@@ -1,8 +1,57 @@
 Kolkata Howrah 10
 Kolkata SaltLake 8
-SaltLake Airport 12
-Howrah Airport 20
+Kolkata Kharagpur 120
+Kolkata Bardhaman 95
+
 Howrah Durgapur 40
-Durgapur Asansol 25
+Howrah Airport 20
+
+SaltLake Airport 12
+SaltLake NewTown 4
+SaltLake Bidhannagar 5
+
 Airport NewTown 6
-NewTown SaltLake 4
+Airport Barasat 18
+
+NewTown Barasat 10
+NewTown Rajarhat 7
+
+Durgapur Asansol 25
+Durgapur Bardhaman 55
+
+Asansol Raniganj 12
+Asansol Dhanbad 58
+
+Raniganj Dhanbad 42
+
+Bardhaman Bolpur 52
+Bardhaman Kharagpur 85
+
+Bolpur Malda 180
+
+Kharagpur Midnapore 15
+Kharagpur Haldia 70
+
+Midnapore Haldia 55
+
+Barasat Krishnanagar 68
+
+Krishnanagar Berhampore 75
+
+Berhampore Malda 140
+
+Malda Siliguri 230
+
+Siliguri Jalpaiguri 40
+
+Jalpaiguri CoochBehar 90
+
+Rajarhat Bidhannagar 8
+
+Bidhannagar DumDum 6
+
+DumDum Barasat 11
+
+Haldia Digha 110
+
+Digha Midnapore 95

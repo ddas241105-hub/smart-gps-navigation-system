@@ -1,39 +1,54 @@
-# Smart GPS Navigation & Route Optimization System
+# Smart GPS Navigation System
 
-A graph-based GPS navigation simulator developed in C++ using Dijkstra’s shortest path algorithm.
+A C++ based smart navigation and route optimization system that simulates real-world GPS functionalities using graph algorithms, traffic simulation, and heuristic-based pathfinding.
+
+---
 
 ## Features
 
-- Graph-based city mapping
-- Dijkstra shortest path algorithm
-- Traffic simulation module
-- File handling for road networks
-- Modular object-oriented design
+- Dijkstra Shortest Path Algorithm
+- A* Pathfinding Algorithm
+- Dynamic Traffic Simulation
+- Realistic Traffic Levels
+- Vehicle-Based Routing
+- Fuel Consumption Estimation
+- Travel Time Estimation
+- Runtime Comparison
+- Route History Logging
+- CSV Report Export
+- ASCII Network Visualization
+- Large City Network Support
+- Dynamic City Addition
+- Dynamic Road Addition
+- Menu-Based Interface
+- Object-Oriented Modular Design
+
+---
+
+## Algorithms Used
+
+### Dijkstra Algorithm
+Finds the shortest path between two cities.
+
+### A* Algorithm
+Uses heuristic optimization for faster route estimation.
+
+---
 
 ## Technologies Used
 
 - C++
 - STL
-- Graph Algorithms
+- Graph Data Structures
 - Priority Queues
 - File Handling
+- OOP Concepts
+
+---
 
 ## Project Structure
 
-src/ → source files  
-include/ → header files  
-data/ → road network data  
-output/ → generated outputs
-
-## Algorithms Used
-
-- Dijkstra’s Algorithm
-- Graph Traversal
-- Priority Queue Optimization
-
-## Future Improvements
-
-- A* pathfinding
-- Real-time traffic updates
-- GUI visualization
-- Interactive map rendering
+```text
+include/   -> Header files
+src/       -> Source files
+data/      -> Roads, history, reports

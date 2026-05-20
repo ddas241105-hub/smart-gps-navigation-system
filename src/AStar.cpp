@@ -1,7 +1,8 @@
-#include "../include/Dijkstra.h"
+#include "../include/AStar.h"
 
 #include <queue>
 #include <unordered_map>
+#include <cmath>
 #include <climits>
 #include <algorithm>
 #include <cctype>
@@ -14,7 +15,7 @@
 
 using namespace std;
 
-string toLowerCase(string text) {
+string toLowerCaseAStar(string text) {
 
     for (char &c : text) {
         c = tolower(c);
@@ -23,9 +24,23 @@ string toLowerCase(string text) {
     return text;
 }
 
-double Dijkstra::shortestPath(Graph& graph,
-                            string start,
-                            string destination) {
+double AStar::heuristic(Graph& graph,
+                        string city1,
+                        string city2) {
+
+    auto p1 = graph.getCoordinates(city1);
+    auto p2 = graph.getCoordinates(city2);
+
+    return sqrt(
+        pow(p2.first - p1.first, 2)
+        +
+        pow(p2.second - p1.second, 2)
+    );
+}
+
+double AStar::shortestPath(Graph& graph,
+                           string start,
+                           string destination) {
 
     auto &adjList = graph.getAdjList();
 
@@ -34,12 +49,12 @@ double Dijkstra::shortestPath(Graph& graph,
     for (auto city : adjList) {
 
         normalizedCities[
-            toLowerCase(city.first)
+            toLowerCaseAStar(city.first)
         ] = city.first;
     }
 
-    start = toLowerCase(start);
-    destination = toLowerCase(destination);
+    start = toLowerCaseAStar(start);
+    destination = toLowerCaseAStar(destination);
 
     if (normalizedCities.find(start)
         == normalizedCities.end()
@@ -48,7 +63,7 @@ double Dijkstra::shortestPath(Graph& graph,
         == normalizedCities.end()) {
 
         cout << RED;
-        cout << "City not found in map.\n";
+        cout << "City not found.\n";
         cout << RESET;
 
         return -1;
@@ -57,7 +72,7 @@ double Dijkstra::shortestPath(Graph& graph,
     start = normalizedCities[start];
     destination = normalizedCities[destination];
 
-    unordered_map<string, int> distance;
+    unordered_map<string, double> distance;
     unordered_map<string, string> parent;
 
     for (auto city : adjList) {
@@ -65,9 +80,9 @@ double Dijkstra::shortestPath(Graph& graph,
     }
 
     priority_queue<
-        pair<int, string>,
-        vector<pair<int, string>>,
-        greater<pair<int, string>>
+        pair<double, string>,
+        vector<pair<double, string>>,
+        greater<pair<double, string>>
     > pq;
 
     distance[start] = 0;
@@ -77,7 +92,6 @@ double Dijkstra::shortestPath(Graph& graph,
     while (!pq.empty()) {
 
         string currentCity = pq.top().second;
-        int currentDistance = pq.top().first;
 
         pq.pop();
 
@@ -86,17 +100,26 @@ double Dijkstra::shortestPath(Graph& graph,
             string nextCity = neighbor.first;
             int roadDistance = neighbor.second;
 
-            if (currentDistance + roadDistance
+            double estimatedCost =
+                distance[currentCity]
+                +
+                roadDistance
+                +
+                heuristic(graph,
+                          nextCity,
+                          destination);
+
+            if (estimatedCost
                 < distance[nextCity]) {
 
                 distance[nextCity]
-                    = currentDistance + roadDistance;
+                    = estimatedCost;
 
                 parent[nextCity]
                     = currentCity;
 
                 pq.push({
-                    distance[nextCity],
+                    estimatedCost,
                     nextCity
                 });
             }
@@ -104,10 +127,11 @@ double Dijkstra::shortestPath(Graph& graph,
     }
 
     cout << CYAN;
-    cout << "\n===== SHORTEST PATH RESULT =====\n";
+    cout << "\n===== A* PATH RESULT =====\n";
     cout << RESET;
 
-    if (distance[destination] == INT_MAX) {
+    if (parent.find(destination)
+        == parent.end()) {
 
         cout << RED;
         cout << "No route found.\n";
@@ -122,16 +146,6 @@ double Dijkstra::shortestPath(Graph& graph,
 
     while (current != start) {
 
-        if (parent.find(current)
-            == parent.end()) {
-
-            cout << RED;
-            cout << "Invalid route.\n";
-            cout << RESET;
-
-            return -1;
-        }
-
         path.push_back(current);
 
         current = parent[current];
@@ -144,12 +158,12 @@ double Dijkstra::shortestPath(Graph& graph,
 
     cout << GREEN;
 
-    cout << "Shortest Distance: "
+    cout << "Estimated Distance: "
          << distance[destination]
          << " km\n\n";
 
     cout << YELLOW;
-    cout << "Optimal Route:\n";
+    cout << "Optimal A* Route:\n";
 
     for (int i = 0;
          i < path.size();
@@ -162,6 +176,7 @@ double Dijkstra::shortestPath(Graph& graph,
     }
 
     cout << endl;
+
     cout << RESET;
 
     return distance[destination];

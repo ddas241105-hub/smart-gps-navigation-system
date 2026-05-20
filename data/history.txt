@@ -1,0 +1,64 @@
+================================
+Algorithm: Dijkstra
+Route: kolkata -> midnapore
+Distance: 142 km
+Estimated Time: 2.84 hrs
+Fuel Required: 9.46667 L
+================================
+
+================================
+Algorithm: A*
+Route: kolkata -> midnapore
+Distance: 146.472 km
+Estimated Time: 2.84 hrs
+Fuel Required: 9.46667 L
+================================
+
+================================
+Algorithm: Dijkstra
+Route: kolkata -> siliguri
+Distance: 590 km
+Estimated Time: 11.8 hrs
+Fuel Required: 39.3333 L
+================================
+
+================================
+Algorithm: A*
+Route: kolkata -> siliguri
+Distance: 661.977 km
+Estimated Time: 11.8 hrs
+Fuel Required: 39.3333 L
+================================
+
+================================
+Algorithm: Dijkstra
+Route: kolkata -> durgapur
+Distance: 79 km
+Estimated Time: 1.58 hrs
+Fuel Required: 5.26667 L
+================================
+
+================================
+Algorithm: A*
+Route: kolkata -> durgapur
+Distance: 100.932 km
+Estimated Time: 1.58 hrs
+Fuel Required: 5.26667 L
+================================
+
+================================
+Algorithm: Dijkstra
+Route: kolkata -> durgapur
+Distance: 89 km
+Estimated Time: 2.54286 hrs
+Fuel Required: 11.125 L
+================================
+
+================================
+Algorithm: A*
+Route: kolkata -> durgapur
+Distance: 110.932 km
+Estimated Time: 2.54286 hrs
+Fuel Required: 11.125 L
+================================
+
