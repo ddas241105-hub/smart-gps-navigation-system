@@ -75,8 +75,13 @@ g++ main.cpp src/*.cpp -o gps
 ## Screenshots
 
 ### Main Menu
-![Menu](assets/menu_system.png) 
+![Menu](assets/menu_sys.png) 
 
+### Route Optimization
+![Route](assets/route.png)
+
+### Map
+![ASCII_map](assets/ASCII_map.png)
 
 ---
 
