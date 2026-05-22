@@ -75,7 +75,9 @@ g++ main.cpp src/*.cpp -o gps
 ## Screenshots
 
 ### Main Menu
-![Menu](assets/menu_system.png)
+![Menu](assets/menu_system.png) 
+
+
 ---
 
 ## Author
