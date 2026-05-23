@@ -86,9 +86,9 @@ g++ main.cpp src/*.cpp -o gps
 ---
 
 ## Demo Video
-A quick walkthrough of the banking system:
+A quick walkthrough of the gps navigation system:
 
-https://drive.google.com/file/d/1O99_rDQM16g5ewu9Ui8-GpokbEdbc85p/view?usp=drive_link
+https://drive.google.com/file/d/1xjTBX_y4oxP5EVQOaAjTApoXTE2DferM/view?usp=drive_link
 
 ---
 
